@@ -1,0 +1,175 @@
+1.
+
+		Прочитать и выучить
+		 Шилдт Г. "Java. Полное руководство"
+			Глава 3. Типы данных, переменные и массивы (стр. 88 - 91)
+			Глава 4. Операторы (стр. 101 - 110).
+			Глава 5. Управляющие операторы (стр. 124 - 135, 137 - 143).
+		 Кей Хорстманн, Гари Корнелл - Java 2. Том 1 (ст. 90 - 94).
+		 http://study-java.ru/uroki-java/formatirovanie-chisel-i-texta-v-java/
+		 http://metanit.com/java/tutorial/2.9.php
+		 Прочитать про Escape-последовательности
+			(можете использовать другой ресурс для изучения синтаксиса и основных конструкции)
+
+		Визуализаторы сортировок: http://visualgo.net/sorting.html
+
+		Горячие венргерские танцоры: https://www.youtube.com/playlist?list=PLOmdoKois7_FK-ySGwHBkltzB11snW7KQ
+
+		REMEMBER:
+
+		loop(start,end,step)
+			while, do-while,for
+
+		array
+		    	static size, indexes, one type for all cells
+			action
+				create
+				read from cell
+				write into cell
+
+		method (grouping line of code)
+			location - in class
+			structure -
+			// signature
+			public static <return type> <name>(<type> <argName>){
+				// body, actions
+			}
+                public static <return type> <name, verb> (){
+               // body, actions
+            }
+        REMEMBER if method return nothing use void as return type!!!!
+
+
+2. !!!!!!!!! Analyze code(use debug or visualizer) !!!!!!!!
+
+            - classwork week2
+			- https://github.com/presly808/base6/tree/master/src/week2/day1
+			- https://github.com/presly808/base6/blob/master/src/week2/day2/FindMin.java
+
+           Visualize all today classwork and below examples:
+
+            https://github.com/presly808/ACB9/tree/master/src/ua/artcode/week2/
+
+            https://github.com/presly808/ACB3/blob/master/src/ua/artcode/week2/day1/LoopTest.java
+
+            https://github.com/presly808/ACB3/blob/master/src/ua/artcode/week2/day1/Task1_1.java
+
+            https://github.com/presly808/ACB3/blob/master/src/ua/artcode/week2/day1/Task2.java
+
+            http://www.pythontutor.com/visualize.html#code=public+class+DecToBin+%7B%0A%0A%09public+static+void+main(String%5B%5D+args%29+%7B%0A%09%09%0A%09%09int+num+%3D+53%3B%0A%09%09%0A%09%09String+bin+%3D+decToBin(num%29%3B%0A%09%09System.out.println(%22binary+%3D+%22+%2B+bin%29%3B%0A%09%09%0A%09%09int+res+%3D+binToDec(bin%29%3B%0A%09%09%0A%09%09System.out.println(%22dec+%3D+%22+%2B+res%29%3B%0A%09%7D%0A%09%0A%09public+static+String+decToBin(int+dec%29%7B%0A%09%09int+div+%3D+dec%3B%0A%09%09int+mod+%3D+0%3B%0A%09%09String+res+%3D+%22%22%3B%0A%09%09%0A%09%09while(div+%3E%3D+1%29%7B+//exit+condition%0A%09%09%09mod+%3D+div+%25+2%3B+%0A%09%09%09res+%3D+mod+%2B+res%3B+//+action%0A%09%09%09div+%3D+div+/+2%3B+//+way+condition%0A%09%09%7D%0A%09%09%0A%09%09return+res%3B%0A%09%7D%0A%09%0A%09public+static+int+binToDec(String+bin%29%7B%0A%09%09int+res+%3D+0%3B%0A%09%09for(int+i+%3D+bin.length(%29+-+1,+pow+%3D+1%3B+i+%3E%3D+0%3B+i--,+pow+%3C%3C%3D+1%29%7B%0A%09%09%09int+num+%3D+(bin.charAt(i%29+%3D%3D+'0'+%3F+0+%3A+1%29%3B%0A%09%09%09res+%3D+res+%2B+num+*+pow%3B%0A%09%09%7D%0A%09%09return+res%3B%0A%09%09%0A%09%7D%0A%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0
+
+            http://www.pythontutor.com/visualize.html#code=public+class+Task2+%7B%0A%09%0A%09%0A%09public+static+void+main(String%5B%5D+args%29+%7B%0A%09%0A%09%09%0A%09%09%0A%09%09int+size+%3D+20%3B%0A%09%09%0A%09%09System.out.println(%22start+range%22%29%3B%0A%09%09int+start+%3D+5%3B%0A%09%09%0A%09%09System.out.println(%22end+range%22%29%3B%0A%09%09int+end+%3D+15%3B%0A%09%09%0A%09%09int%5B%5D+arr+%3D+new+int%5Bsize%5D%3B%0A%09%09int+i+%3D+start%3B%0A%09%09%0A%09%09if(i+%25+2+%3D%3D+0%29%7B%0A%09%09%09i+%2B%3D+1%3B%0A%09%09%7D+%0A%09%09%0A%09%09for(int+j+%3D+0%3B+j+%3C+arr.length%3B+i+%2B%3D+2,+j%2B%2B%29%7B%0A%09%09%09arr%5Bj%5D+%3D+i%3B%0A%09%09%7D%0A%09%09%0A%09%09System.out.println(%22Reversed+array%22%29%3B%0A%09%09for(int+j+%3D+arr.length+-+1%3B+j+%3E%3D+0%3B+j--%29%7B%0A%09%09%09System.out.print(arr%5Bj%5D+%2B+%22+%22%29%3B%0A%09%09%7D%0A%09%09%0A%09%7D%0A%7D%0A/*viz_options+%7B%22showStringsAsObjects%22%3Atrue%7D*/&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0
+
+
+
+3. Do First all tasks from below links !!! You can use IDEA for better understanding
+               	http://codingbat.com/java/Array-2
+               	http://codingbat.com/java/String-1
+
+	           (Как пользоваться сайтом
+	           			https://www.youtube.com/watch?v=cODLgsJMiMI&index=5&list=PLvf0crXC-YPoYF0wGTYL7OoF_OYd2LgVn )
+
+
+4.	   Массив создается и выводится на консоль с помощью метода в классе ArrayUtils(методы создаются вами)
+        Будет хорошо, если каждому заданию будет соответсвовать свой метод в классе ArrayUtils
+
+               	1) Найти минимальное и максимальное значения в массиве и вывести их на консоль
+
+               	2) Найти среднее арифметическое массива
+
+               	3) Поменять местами наибольший
+               		и наименьший элементы в массиве
+
+               	4) Заданы два массива одинаковой длинны с любыми значениями скопировать данные из первого массива во второй
+
+               	5) Посчитать сколько раз цифра(цифра задается пользователем) встречается в  случайно сгенерированом массиве
+
+               	6) Вывести в консоль элементы той половины одномерного массива у которой среднее арифметическое максимальное
+
+               	7) Eсть два массива одинаковой длины arr1 и arr2 вывести в консоль значения массива,
+               	   который получается в результате суммы arr1[i] + arr2[i]
+
+               	8) Заполнить массив случайными значениями. На четных индексах парные значения, на нечетных непарные
+
+               	9) Задать два массива случайными числами от 25 до 75. Определить у какого из массивов больше парных елементов.
+
+               	10) Написать метод, который будет обрезать массив по границам start и end
+
+               	        public static int[] splitArray(int[] arr, int start, int end) {
+               	            // обрезать массив по границам start и end
+               	        }
+
+ 5. Задание по циклам:
+
+        		5.1. Перевод с числа с десятичной системы счисления в двоичную, и наоборот. Пользователь сам вводит число
+
+        		5.2. Вычислить факториал числа.
+
+        		5.3. Посчитать сколько раз встречается символ 8 в заданном числе, которое вводит юзер
+                                5678  -   1
+                                5889  -   2
+                                8888  -   4
+                                989990  - 1
+
+        		5.4. Последовательность Фибоначчи определяется так:
+                     φ0=0,  φ1=1, ..., φn=φn-1+φn-2.
+
+                     По данному числу n определите n-е число Фибоначчи φn.
+
+6. Игра "Угадай число":
+           Програма генерирует случайное, целое число в диапазоне от 25 до 125 (включительно).
+           Пользователь пытается его угадать.
+           Число попыток ограничено 5.
+           Если пользователь ввел неверное число, программа дает подсказу (больше/меньше).
+           Придумать разные варианты ответов, при отгадывании с первой попытки, нескольких попыток, в случае проигрыша.
+
+
+
+7. *
+
+	7.1 Инвертировать массив (без использования допольнительного массива)
+
+	7.2 Проверить или является число простым
+
+	7.3 Написать свой метод arraycopy, аналогичный методу System.arraycopy
+	public static void arraycopy(Object src,
+                 int srcPos,
+                 Object dest,
+                 int destPos,
+                 int length)
+
+	7.4 Сдвинуть массив на заданное количество позиций // {1,2,3,4,5} -> 2 = {4,5,1,2,3}; {1,2,3,4,5} -> 3 = {3,4,5,1,2}
+		Количество позиций и массив указывает пользователь
+
+
+8.*
+    Do tasks from below links !!! You can use IDEA for better
+	        http://codingbat.com/java/Array-2
+	        http://codingbat.com/java/Array-3
+
+
+9.* Написать методы сортировки selectSort, insertSort.
+
+10.*
+        "Лотерея"
+
+        Програма генерирует шесть случайных, целых чисел в диапазоне от 1 до 42 (включительно).
+
+        Числа не должны совпадать!!! (сделать отдельным методом в классе ArrayUtils)
+
+        Пользователь вводит 6 разных чисел в диапазоне от 1 до 42 (включительно). (сделать отдельным методом)
+
+        Программа вывод в консоль выпавшые номера в порядке возрастания
+
+        (использовать один из методов в Вашем классе ArrayUtils).
+
+        И показывает количество угаданных пользователем чисел. (сделать отдельным методом)
+
+        Придумать варианты поздравлений на случаи совпадений (3 из 6, 4 из 6, 5 из 6, 6 из 6, прочие).
+
+
+
+11.* Написать программу, которая возвращает факториал чисел 21 и больше.
+
+
+12.** Вы молодцы! Хорошей всем недели!
