@@ -331,4 +331,102 @@ public class ArrayUtils {
         }
         return array;
     }
+
+//  Task 7.1
+    public static int[] inversionArray(int[] array){
+        int tmp;
+        for (int i = 0; i < (array.length / 2); i++) {
+            tmp = array[i];
+            array[i] = array[array.length - (1 + i)];
+            array[array.length - (i + 1)] = tmp;
+        }
+        return array;
+    }
+//  Task 7.2
+    public static void simpleNumber(int number){
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0){
+                System.out.println(number % i);
+                System.out.println("Not simple");
+                return;
+            }
+        }
+        System.out.println("Simple");
+    }
+
+//    Task 7.4
+    public static int[] shiftArray(int[] array, int pos){
+        for (int j = 0; j < pos; j++) {
+            for (int i = 0; i < array.length; i++) {
+
+            }
+        }
+        return array;
+    }
+
+//    SelectSort
+    public  static void selectSort(int[] array){
+        int minIndex = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            minIndex = i + 1;
+            for (int j = i + 2; j < array.length; j++) {
+                if (array[minIndex] > array[j]) {
+                    minIndex = j;
+                }
+            }
+            if (array[i] > array[minIndex]) {
+                swap(array, i, minIndex);
+            }
+            printArray(array);
+        }
+    }
+
+//    InsertSort
+    public static void insertSort(int[] array){
+        for (int i = 1; i < array.length; i++) {
+            for (int j = i - 1; j >= 0 ; j--) {
+                if(array[i] < array[j]){
+                    swap(array, i, j);
+                    i--;
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+
+//    Games
+
+    public static int[] gameNumber(int count, int min, int max){
+        int[] array = createRandomArray(count, min, max);
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    int tmp = (int) (min + Math.random() * (max - min));
+//                    не знаю как сделать динамично
+                    if (tmp != array[0] && tmp != array[1] && tmp != array[2] && tmp != array[3] && tmp != array[4] && tmp != array[5])
+                        array[j] = tmp;
+                }
+            }
+        }
+        return array;
+    }
+    public static int[] enterNumbers(int count){
+        int[] array = new int[count];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < count; i++) {
+            System.out.println("Enter " + (i + 1) + " number:");
+            array[i] = sc.nextInt();
+            while (array[i] > 42 || array[i] < 0){
+                System.out.println("Incorrect number");
+                array[i] = sc.nextInt();
+            }
+        }
+        insertSort(array);
+        return array;
+    }
+
 }
+
+
+
