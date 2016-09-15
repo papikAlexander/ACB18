@@ -12,9 +12,9 @@ public class _02Extra {
 
         System.out.print("Enter  = ");
         int a = sc.nextInt();
-        int res = 1;
+        long res = 1;
 
-        for (int i = a; i > 0; i--){
+        for (int i = a; i > 1; i--){
             res *= i;
         }
         System.out.println("!" + a + " = " + res);
