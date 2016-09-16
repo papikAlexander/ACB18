@@ -1,5 +1,6 @@
 package utils;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -166,9 +167,7 @@ public class ArrayUtils {
                 positionMin = i;
             }
         }
-        tmp = array[positionMin];
-        array[positionMin] = array[positionMax];
-        array[positionMax] = tmp;
+        swap(array, positionMin, positionMax);
 
         printArray(array);
         System.out.println();
@@ -395,6 +394,7 @@ public class ArrayUtils {
         }
     }
 
+
 //    Games
 
     public static int[] gameNumber(int count, int min, int max){
@@ -425,8 +425,19 @@ public class ArrayUtils {
         insertSort(array);
         return array;
     }
+//Factorial bigInteger
+    public static void factorial(int number){
+        BigInteger res = BigInteger.valueOf(1);
+        BigInteger tmp;
 
+        for (int i = number; i > 1; i--){
+            tmp = BigInteger.valueOf(i);
+            res = res.multiply(tmp);
+        }
+        System.out.println("!" + number + " = " + res.toString());
+    }
 }
+
 
 
 

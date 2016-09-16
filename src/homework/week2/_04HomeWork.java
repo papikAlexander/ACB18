@@ -29,6 +29,8 @@ public class _04HomeWork {
 //        ArrayUtils.printArray(array);
         int[] array2 = ArrayUtils.gameNumber(6, 1, 10);
        // int[] array = ArrayUtils.enterNumbers(6);
-        ArrayUtils.printArray(array2);
+      //  ArrayUtils.printArray(array2);
+
+        ArrayUtils.factorial(25);
     }
 }
