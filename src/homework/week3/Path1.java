@@ -12,7 +12,7 @@ public class Path1 {
 //        StringUtils.longWord(array);
 //        StringUtils.shortWord(array);
 
-   /*     String arrayNew = StringUtils.replaceWord(array, "bla", "***");
+   /*     String arrayNew = StringUtils.replaceWord(array, "bob", "***");
         System.out.println(arrayNew);*/
 
 //        StringUtils.uppercase(array);

@@ -78,9 +78,16 @@ public class StringUtils {
         StringBuffer array2 = new StringBuffer();
         for (int i = 0; i < array.length; i++) {
             if(i % 2 == 0){
-                StringBuffer arr = new StringBuffer();
-                arr.append(array[i]);
-                array[i] = arr.reverse().toString();
+                char[] word = array[i].toCharArray();
+                    for (int j = 0; j < word.length/2; j++) {
+                        char tmp = word[j];
+                        word[j] = word[word.length - j - 1];
+                        word[word.length - j - 1] = tmp;
+                    }
+                    array[i] = "";
+                for (int j = 0; j < word.length; j++) {
+                    array[i] += word[j];
+                }
             } else {
                 array[i] = delete(array[i]);
             }
@@ -101,5 +108,61 @@ public class StringUtils {
 
     }
 
+//3.3. Написать метод, который проверяет является ли строка палиндромом
+    public static void palindrome(String sentence){
+        String first = sentence.substring(0, sentence.length()/2).toLowerCase();
+        StringBuffer last = new StringBuffer();
+        if (sentence.length() % 2 == 0)
+            last.append(sentence.substring(sentence.length()/2, sentence.length()).toLowerCase());
+        else
+            last.append(sentence.substring(sentence.length()/2 + 1, sentence.length()).toLowerCase());
+        last.reverse();
 
+        if(first.contentEquals(last.toString())){
+            System.out.println("It's polindrome");
+        } else {
+            System.out.println("It isn't polindrome");
+        }
+        System.out.println(first);
+        System.out.println(last);
+    }
+
+/*    3.6. Нули
+    Требуется найти самую длинную непрерывную цепочку нулей  и единиц в последовательности цифр.
+    Вход:
+            10001101001
+    Выход:
+            (2,4) - цепочка нулей
+            (5,6) - цепочка единиц*/
+
+public static void chain(long number){
+    String array = "" + number;
+    StringBuffer arr = new StringBuffer();
+    StringBuffer arr2 = new StringBuffer();
+
+    for (int i = 0; i < array.length(); i++) {
+        arr.append('0');
+        arr2.append('1');
+    }
+    for (int i = 0; i < array.length(); i++) {
+        int tmp = array.indexOf(arr.toString());
+        if (tmp != -1){
+            System.out.printf("(%d,%d) - цепочка нулей", tmp + 1, arr.length() + tmp);
+            System.out.println();
+            break;
+        } else {
+            arr.deleteCharAt(0);
+        }
+    }
+    for (int i = 0; i < array.length(); i++) {
+        int tmp2 = array.indexOf(arr2.toString());
+        if (tmp2 != -1){
+            System.out.printf("(%d,%d) - цепочка единиц", tmp2 + 1, arr2.length() + tmp2);
+            break;
+        } else {
+            arr2.deleteCharAt(0);
+        }
+
+    }
+}
 }
